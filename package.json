@@ -1,0 +1,33 @@
+{
+  "name": "@dadangnh/open-music-api",
+  "version": "0.0.1",
+  "description": "Open Music API.",
+  "main": "index.js",
+  "scripts": {
+    "start-prod": "NODE_ENV=production node ./src/server.js",
+    "start-dev": "nodemon ./src/server.js",
+    "lint": "eslint ./src",
+    "test": "lab -v **/*.test.js",
+    "test-gitlab-ci": "lab -v **/*.test.js --reporter junit -o junit.xml",
+    "migrate": "node-pg-migrate"
+  },
+  "keywords": ["Node", "Hapi"],
+  "author": "Dadang NH <hello@dadangnh.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@hapi/code": "^9.0.0",
+    "@hapi/lab": "^25.0.1",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^20.1.0",
+    "dotenv": "^16.0.1",
+    "joi": "^17.6.0",
+    "nanoid": "^3.1.20",
+    "node-pg-migrate": "^6.2.1",
+    "pg": "^8.7.3"
+  }
+}
