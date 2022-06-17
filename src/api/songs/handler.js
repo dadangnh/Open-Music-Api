@@ -50,7 +50,7 @@ class SongsHandler {
     }
   }
 
-  async getSongsHandler(request, h) {
+  async getSongsHandler(request) {
     const { title, performer } = request.query;
 
     let songs;
