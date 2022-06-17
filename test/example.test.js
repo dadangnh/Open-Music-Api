@@ -27,10 +27,18 @@ describe('GET /', () => {
     expect(res.statusCode).to.equal(404);
   });
 
-  it('responds with 200', async () => {
+  it('responds with 200 on albums', async () => {
     const res = await server.inject({
       method: 'get',
       url: '/albums'
+    });
+    expect(res.statusCode).to.equal(200);
+  });
+
+  it('responds with 200 on songs', async () => {
+    const res = await server.inject({
+      method: 'get',
+      url: '/songs'
     });
     expect(res.statusCode).to.equal(200);
   });
