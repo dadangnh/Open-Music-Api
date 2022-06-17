@@ -15,8 +15,12 @@ class SongsHandler {
   async postSongHandler(request, h) {
     try {
       this._validator.validateSongPayload(request.payload);
-      const { title = 'untitled', year, performer, genre, duration, albumId } = request.payload;
-      const songId = await this._service.addSong({ title, year, performer, genre, duration, albumId });
+      const {
+        title = 'untitled', year, performer, genre, duration, albumId,
+      } = request.payload;
+      const songId = await this._service.addSong({
+        title, year, performer, genre, duration, albumId,
+      });
       const response = h.response({
         status: 'success',
         message: 'Song added succesfully.',
@@ -101,9 +105,13 @@ class SongsHandler {
   async putSongByIdHandler(request, h) {
     try {
       this._validator.validateSongPayload(request.payload);
-      const { title, year, performer, genre, duration, albumId } = request.payload;
+      const {
+        title, year, performer, genre, duration, albumId,
+      } = request.payload;
       const { id } = request.params;
-      await this._service.editSongById(id, { title, year, performer, genre, duration, albumId });
+      await this._service.editSongById(id, {
+        title, year, performer, genre, duration, albumId,
+      });
       return {
         status: 'success',
         message: 'Song updated successfully.',
