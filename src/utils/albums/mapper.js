@@ -15,7 +15,7 @@ const mapSongOnAlbumDBToModel = ({
 }) => ({
   id,
   title,
-  performer
+  performer,
 });
 
 module.exports = { mapAlbumDBToModel, mapSongOnAlbumDBToModel };
