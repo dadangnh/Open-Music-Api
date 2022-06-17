@@ -36,7 +36,6 @@ class AlbumsHandler {
         return response;
       }
 
-      // Server ERROR!
       const response = h.response({
         status: 'error',
         message: 'Sorry, there is error on our server.',
@@ -77,7 +76,6 @@ class AlbumsHandler {
         return response;
       }
 
-      // Server ERROR!
       const response = h.response({
         status: 'error',
         message: 'Sorry, there is error on our server.',
@@ -108,7 +106,6 @@ class AlbumsHandler {
         return response;
       }
 
-      // Server ERROR!
       const response = h.response({
         status: 'error',
         message: 'Sorry, there is error on our server.',
@@ -137,7 +134,6 @@ class AlbumsHandler {
         return response;
       }
 
-      // Server ERROR!
       const response = h.response({
         status: 'error',
         message: 'Sorry, there is error on our server.',
