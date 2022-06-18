@@ -11,7 +11,8 @@ Dicoding Open Music API Submission (2022 version).
 
 ## Canonical source
 
-The canonical source of Open Music API where all development takes place is [hosted on GitLab.com](https://gitlab.com/dadangnh/open-music-api).
+The canonical source of Open Music API where all development takes place
+is [hosted on GitLab.com](https://gitlab.com/dadangnh/open-music-api).
 
 ## Installation
 
@@ -21,6 +22,6 @@ Please check [INSTALLATION.md](INSTALLATION.md) for the installation instruction
 
 This is an open source project, and we are very happy to accept community contributions.
 
-# License
+## License
 
 This code is published under [MIT License](LICENSE).

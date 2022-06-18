@@ -25,7 +25,7 @@ jobs:
           - 5432:5432
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x, lts/*, latest]
+        node-version: [ 14.x, 16.x, 18.x, lts/*, latest ]
     env:
       PGUSER: db_user
       PGHOST: localhost

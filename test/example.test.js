@@ -1,10 +1,10 @@
-'use strict';
-
 const Lab = require('@hapi/lab');
 
 const { expect } = require('@hapi/code');
 
-const { afterEach, beforeEach, describe, it } = exports.lab = Lab.script();
+const {
+  afterEach, beforeEach, describe, it,
+} = exports.lab = Lab.script();
 
 const { init } = require('../src/server.test');
 
@@ -22,7 +22,7 @@ describe('GET /', () => {
   it('responds with 404', async () => {
     const res = await server.inject({
       method: 'get',
-      url: '/'
+      url: '/',
     });
     expect(res.statusCode).to.equal(404);
   });
@@ -30,7 +30,7 @@ describe('GET /', () => {
   it('responds with 200 on albums', async () => {
     const res = await server.inject({
       method: 'get',
-      url: '/albums'
+      url: '/albums',
     });
     expect(res.statusCode).to.equal(200);
   });
@@ -38,9 +38,8 @@ describe('GET /', () => {
   it('responds with 200 on songs', async () => {
     const res = await server.inject({
       method: 'get',
-      url: '/songs'
+      url: '/songs',
     });
     expect(res.statusCode).to.equal(200);
   });
-
 });

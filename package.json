@@ -11,7 +11,10 @@
     "test-gitlab-ci": "lab -v **/*.test.js --coverage --reporter junit -o junit.xml",
     "migrate": "node-pg-migrate"
   },
-  "keywords": ["Node", "Hapi"],
+  "keywords": [
+    "Node",
+    "Hapi"
+  ],
   "author": "Dadang NH <hello@dadangnh.com>",
   "license": "MIT",
   "devDependencies": {
