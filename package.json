@@ -7,8 +7,8 @@
     "start-prod": "NODE_ENV=production node ./src/server.js",
     "start-dev": "nodemon ./src/server.js",
     "lint": "eslint ./src",
-    "test": "lab -v **/*.test.js",
-    "test-gitlab-ci": "lab -v **/*.test.js --reporter junit -o junit.xml",
+    "test": "lab -v **/*.test.js --coverage",
+    "test-gitlab-ci": "lab -v **/*.test.js --coverage --reporter junit -o junit.xml",
     "migrate": "node-pg-migrate"
   },
   "keywords": ["Node", "Hapi"],
