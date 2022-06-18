@@ -1,4 +1,4 @@
-const ClientError = require('../../exceptions/ClientError');
+const responseHandler = require('../../utils/catchError');
 
 class SongsHandler {
   constructor(service, validator) {
@@ -23,7 +23,7 @@ class SongsHandler {
       });
       const response = h.response({
         status: 'success',
-        message: 'Song added succesfully.',
+        message: 'Song added successfully.',
         data: {
           songId,
         },
@@ -31,22 +31,7 @@ class SongsHandler {
       response.code(201);
       return response;
     } catch (error) {
-      if (error instanceof ClientError) {
-        const response = h.response({
-          status: 'fail',
-          message: error.message,
-        });
-        response.code(error.statusCode);
-        return response;
-      }
-
-      const response = h.response({
-        status: 'error',
-        message: 'Sorry, there is error on our server.',
-      });
-      response.code(500);
-      console.error(error);
-      return response;
+      return responseHandler(error, h);
     }
   }
 
@@ -83,22 +68,7 @@ class SongsHandler {
         },
       };
     } catch (error) {
-      if (error instanceof ClientError) {
-        const response = h.response({
-          status: 'fail',
-          message: error.message,
-        });
-        response.code(error.statusCode);
-        return response;
-      }
-
-      const response = h.response({
-        status: 'error',
-        message: 'Sorry, there is error on our server.',
-      });
-      response.code(500);
-      console.error(error);
-      return response;
+      return responseHandler(error, h);
     }
   }
 
@@ -117,22 +87,7 @@ class SongsHandler {
         message: 'Song updated successfully.',
       };
     } catch (error) {
-      if (error instanceof ClientError) {
-        const response = h.response({
-          status: 'fail',
-          message: error.message,
-        });
-        response.code(error.statusCode);
-        return response;
-      }
-
-      const response = h.response({
-        status: 'error',
-        message: 'Sorry, there is error on our server.',
-      });
-      response.code(500);
-      console.error(error);
-      return response;
+      return responseHandler(error, h);
     }
   }
 
@@ -145,22 +100,7 @@ class SongsHandler {
         message: 'Song deleted successfully.',
       };
     } catch (error) {
-      if (error instanceof ClientError) {
-        const response = h.response({
-          status: 'fail',
-          message: error.message,
-        });
-        response.code(error.statusCode);
-        return response;
-      }
-
-      const response = h.response({
-        status: 'error',
-        message: 'Sorry, there is error on our server.',
-      });
-      response.code(500);
-      console.error(error);
-      return response;
+      return responseHandler(error, h);
     }
   }
 }
