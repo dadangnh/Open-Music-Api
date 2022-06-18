@@ -1,0 +1,43 @@
+name: Unit Test CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: db_pass
+          POSTGRES_USER: db_user
+          POSTGRES_DB: db_name
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x, lts/*, latest]
+    env:
+      PGUSER: db_user
+      PGHOST: localhost
+      PGPASSWORD: db_pass
+      PGDATABASE: db_name
+      PGPORT: 5432
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run migrate up
+      - run: npm run test
