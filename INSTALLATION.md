@@ -4,9 +4,9 @@
 
 Before running this script, you need the following software installed:
 
- 1. [nodeJS](https://nodejs.org/en/)
- 2. [git](https://git-scm.com/)
- 3. [Docker Engine](https://www.docker.com/get-started/)
+1.  [nodeJS](https://nodejs.org/en/)
+2.  [git](https://git-scm.com/)
+3.  [Docker Engine](https://www.docker.com/get-started/)
 
 ## Installation
 
