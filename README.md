@@ -9,6 +9,8 @@
 
 Dicoding Open Music API Submission (2022 version).
 
+Every submission (v1/v2/v3) will have own tag and branch.
+
 ## Canonical source
 
 The canonical source of Open Music API where all development takes place
